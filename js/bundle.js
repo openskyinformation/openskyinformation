@@ -242,6 +242,7 @@ function serialize(form) {
  */
 async function validFormAction() {
   const $customForm = document.querySelector("#custom-form");
+  console.log(`1`,1);
   if ($customForm != null) {
     $customForm.addEventListener("submit", async function (e) {
       e.preventDefault();
