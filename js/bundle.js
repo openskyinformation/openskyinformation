@@ -303,15 +303,69 @@ async function sendRequestasync(data) {
 validFormAction();
 
 ///function validsubmenuclick(){
-  var menuItem = document.querySelector(".menu-item-has-children a");
-  if(menuItem != null){
-    menuItem.addEventListener("click",function(e){
-      console.log(e)
-      e.target.parentNode.querySelector(".sub-menu").style.display="block"
-    })
-  }
+var menuItem = document.querySelector(".menu-item-has-children a");
+if (menuItem != null) {
+  menuItem.addEventListener("click", function (e) {
+    console.log(e)
+    e.target.parentNode.querySelector(".sub-menu").style.display = "block"
+  })
+}
 /* }
 validsubmenuclick() */
+
+
+function initFreshChat() {
+  window.fcWidget.init({
+    token: "22c84c28-bce4-4173-b509-eb3c5fc0445e",
+    host: "https://wchat.freshchat.com",
+    externalId: "john.doe1987",     // user’s id unique to your system
+    firstName: "John",              // user’s first name
+    lastName: "Doe",                // user’s last name
+    email: "john.doe@gmail.com",    // user’s email address
+    phone: "8668323090",            // phone number without country code
+    phoneCountryCode: "+1",          // phone’s country code
+    config: {
+      content: {
+        placeholders: {
+          search_field: 'Buscar',
+          reply_field: 'Responder',
+          csat_reply: 'Add your comments here'
+        },
+        headers: {
+          chat: 'Chatea con nosotros',
+          chat_help: 'Reach out to us if you have any questions',
+          faq: 'Mas de nosotros',
+          faq_help: 'Browse our articles',
+          faq_not_available: 'No Articles Found',
+          faq_search_not_available: 'No articles were found for {{query}}',
+          faq_useful: 'Was this article helpful?',
+          faq_thankyou: 'Thank you for your feedback',
+          faq_message_us: 'Message Us',
+          push_notification: 'Don\'t miss out on any replies! Allow push notifications?',
+          csat_question: 'Did we address your concerns??',
+          csat_yes_question: 'How would you rate this interaction?',
+          csat_no_question: 'How could we have helped better?',
+          csat_thankyou: 'Thanks for the response',
+          csat_rate_here: 'Submit your rating here',
+          channel_response: {
+            offline: 'We are currently away. Please leave us a message',
+            online: {
+              minutes: {
+                one: "Currently replying in {!time!} minutes ",
+                more: "Typically replies in {!time!} minutes"
+              },
+              hours: {
+                one: "Currently replying in under an hour",
+                more: "Typically replies in {!time!} hours",
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+}
+//function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) } function initiateCall() { initialize(document, "freshchat-js-sdk") } window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
 
 ( function( $ ) {
 
